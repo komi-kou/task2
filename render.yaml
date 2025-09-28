@@ -9,15 +9,15 @@ services:
     name: crm-task-manager
     runtime: node
     plan: free
-    buildCommand: npm ci && npm run postinstall && npm run build
-    startCommand: npm run prisma:migrate && npm start
+    buildCommand: npm ci && npx prisma generate && npm run build
+    startCommand: npx prisma migrate deploy && npm start
     envVars:
       - key: NODE_ENV
         value: production
       - key: DATABASE_URL
         fromDatabase:
           name: crm-db
-          property: connectionString
+          property: internalConnectionString
       - key: NEXTAUTH_URL
         fromService:
           type: web
@@ -25,5 +25,3 @@ services:
           property: url
       - key: NEXTAUTH_SECRET
         generateValue: true
-      - key: PORT
-        value: 3000

@@ -6,9 +6,10 @@
     "dev": "next dev",
     "build": "prisma generate && next build",
     "start": "next start",
+    "lint": "eslint",
     "postinstall": "prisma generate",
-    "prisma:generate": "npx prisma generate",
-    "prisma:migrate": "npx prisma migrate deploy"
+    "prisma:generate": "prisma generate",
+    "prisma:migrate": "prisma migrate deploy"
   },
   "engines": {
     "node": ">=20"
