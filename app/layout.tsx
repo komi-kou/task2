@@ -1,15 +1,15 @@
-import type { Metadata } from "next";
+import './globals.css'
+import { Providers } from './providers'
+import { Metadata } from 'next'
 import { Inter } from "next/font/google";
-import './globals.css';
-import Providers from './providers';
 import { Toaster } from "sonner";
 
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: "CRM Task Manager",
-  description: "Customer Relationship & Task Management System",
-};
+  title: 'Task Management Tool',
+  description: 'Cursor management application',
+}
 
 export default function RootLayout({
   children,
