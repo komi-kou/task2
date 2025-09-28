@@ -2,7 +2,13 @@
 const nextConfig = {
   reactStrictMode: true,
   transpilePackages: ['lucide-react'],
-  output: 'standalone',
+  // Renderでは standalone は不要
+  // output: 'standalone',
+  
+  // Render用の設定
+  experimental: {
+    serverComponentsExternalPackages: ['@prisma/client']
+  }
 };
 
 export default nextConfig;
