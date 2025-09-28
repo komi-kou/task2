@@ -2,9 +2,7 @@
 const nextConfig = {
   reactStrictMode: true,
   transpilePackages: ['lucide-react'],
-  experimental: {
-    serverActions: true,
-  },
+  output: 'standalone',
 };
 
 export default nextConfig;
